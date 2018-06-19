@@ -8,7 +8,7 @@
 
     <!--autowire: byName, byType-->
     <bean name="customerService"
-          class="zac.spring.service.CustomerServiceImpl" autowire="byType">
+          class="zac.spring.service.CustomerServiceImpl" autowire="byType" scope="singleton">
         <!--property injection-->
         <!--<property name="customerRepository" ref="customerRepository"/>-->
         <!--constructor injection-->
