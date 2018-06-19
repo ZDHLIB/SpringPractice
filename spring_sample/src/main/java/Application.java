@@ -14,6 +14,7 @@ public class Application {
                 new AnnotationConfigApplicationContext(AppConfig.class);
         ICustomerService service =
                 appContext.getBean("customerService", ICustomerService.class);
+        System.out.println(service);
         System.out.println(service.findAll().get(0).getFirstName());
     }
 }
