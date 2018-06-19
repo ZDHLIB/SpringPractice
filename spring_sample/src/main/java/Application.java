@@ -1,20 +1,20 @@
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import zac.spring.service.ICustomerService;
 
 public class Application {
     public static void main(String[] orgs){
-//        ApplicationContext applicationContext =
-//                new ClassPathXmlApplicationContext("applicationContext_annotation.xml");
-//        ICustomerService service =
-//                applicationContext.getBean("customerService", ICustomerService.class);
-//        System.out.println(service.findAll().get(0).getFirstName());
-
-        ApplicationContext appContext =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
         ICustomerService service =
-                appContext.getBean("customerService", ICustomerService.class);
-        System.out.println(service);
+                applicationContext.getBean("customerService", ICustomerService.class);
         System.out.println(service.findAll().get(0).getFirstName());
+
+//        ApplicationContext appContext =
+//                new AnnotationConfigApplicationContext(AppConfig.class);
+//        ICustomerService service =
+//                appContext.getBean("customerService", ICustomerService.class);
+//        System.out.println(service);
+//        System.out.println(service.findAll().get(0).getFirstName());
     }
 }
