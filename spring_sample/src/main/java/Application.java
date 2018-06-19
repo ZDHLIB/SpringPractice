@@ -5,7 +5,7 @@ import zac.spring.service.ICustomerService;
 public class Application {
     public static void main(String[] orgs){
         ApplicationContext applicationContext =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("applicationContext_annotation.xml");
         ICustomerService service =
                 applicationContext.getBean("customerService", ICustomerService.class);
         System.out.println(service.findAll().get(0).getFirstName());

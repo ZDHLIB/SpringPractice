@@ -1,5 +1,6 @@
 package zac.spring.repository;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import zac.spring.model.Customer;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Repository("customerRepository")
 public class CustomerRepositoryImpl implements ICustomerRepository {
 
+    @Value("${dbUsername}")
     private String dbUsername;
 
     public List<Customer> findAll(){
